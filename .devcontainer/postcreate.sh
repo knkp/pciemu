@@ -13,8 +13,8 @@ REPOSITORY_NAME=$(basename $REPOSITORY_DIR)
 # Install QEMU dependencies
 sudo apt update
 sudo apt install -y git libglib2.0-dev libfdt-dev libpixman-1-dev zlib1g-dev \
-	            ninja-build netcat libssh-dev libvde-dev libvdeplug-dev \
-		    libcap-ng-dev libattr1-dev libslirp-dev
+	ninja-build netcat libssh-dev libvde-dev libvdeplug-dev \
+	libcap-ng-dev libattr1-dev libslirp-dev
 
 # Initialize submodules
 git submodule update --init
@@ -26,7 +26,10 @@ ln -s $PWD/.devcontainer/.qemu_config $HOME/.qemu_config
 sudo chmod 666 /dev/kvm
 
 # Append .qemu_config to bashrc file
-echo "source ~/.qemu_config" >> $HOME/.bashrc
+echo "source ~/.qemu_config" >>$HOME/.bashrc
 
 # Execute image-related scripts
-.devcontainer/images/imagesetup.sh
+#.devcontainer/images/imagesetup.sh
+
+# Execute imagesetup from current path
+/bin/bash ../images/imagesetup.sh

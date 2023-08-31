@@ -29,7 +29,4 @@ sudo chmod 666 /dev/kvm
 echo "source ~/.qemu_config" >>$HOME/.bashrc
 
 # Execute image-related scripts
-#.devcontainer/images/imagesetup.sh
-
-# Execute imagesetup from current path
-/bin/bash ../images/imagesetup.sh
+.devcontainer/images/imagesetup.sh

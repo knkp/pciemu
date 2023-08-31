@@ -27,6 +27,3 @@ sudo chmod 666 /dev/kvm
 
 # Append .qemu_config to bashrc file
 echo "source ~/.qemu_config" >>$HOME/.bashrc
-
-# Execute image-related scripts
-.devcontainer/images/imagesetup.sh
